@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $categories = Category::all();
         Prouduct::all()->each(function ($product) use ($categories) {
             $product->categories()->attach(
-                $categories->random(2)->pluck('id')->toArray(),
+                $categories->random(2)->pluck('id')->toArray()
             );
         });
     }
